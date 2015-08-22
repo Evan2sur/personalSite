@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="resume">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../angularjs/angular.js"></script>
+    <style type="text/css">
+        #tab { overflow:hidden;position:fixed; float:left;}
+        #tab>img:not(:first-child){ display:none; }
+    </style>
+    <script>
+        window.onload = function(){
+            var images = document.getElementsByTagName('img');
+            var pos = 0;
+            var len = images.length;
+            var Htotal = document.documentElement.clientHeight;
+            var Wtotal = document.documentElement.clientWidth;
+            setInterval(function(){
+                images[pos].style.display = 'none';
+                pos = ++pos == len ? 0 : pos;
+                images[pos].style.height=Htotal+'px';
+                images[pos].style.width=Wtotal+'px';
+                images[pos].style.display = 'inline';
+            },3000);
+        };
+    </script>
+
+</head>
+
+<body >
+<div id="tab">
+    <img src="../image/slide1.jpg" />
+    <img src="../image/slide2.jpg" />
+    <img src="../image/slide3.jpg" />
+</div>
+<marquee style="WIDTH: 900px; HEIGHT: 50px"behavior="scroll" scrollamount="6" direction="up" vspace="210px" hspace="120px" >
+    <div align="center"  >
+        <p ><font color="#F8F8FF" size="50" font-family="Arial,Helvetica,sans-serif,SimSun">HELLO!!</font ></p >
+        <p ><font color="#F8F8FF" size="50" font-family="Arial,Helvetica,sans-serif,SimSun">I'M XXX.</font ></p >
+        <p ><font color="#F8F8FF" size="50" font-family="Arial,Helvetica,sans-serif,SimSun">SLIDE DOWN TO KNOW MORE.</font ></p >
+    </div >
+</marquee >
+<div>
+    <div></div>
+</div>
+<script>
+
+</script>
+</body>
+</html>
